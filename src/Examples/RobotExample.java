@@ -57,7 +57,6 @@ public class RobotExample {
     //turn the robot to the right
     karel.turnRight(2);
     
-    karel.countThingsInBackpack();
     
     
     
