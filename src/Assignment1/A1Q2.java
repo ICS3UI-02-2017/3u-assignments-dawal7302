@@ -8,6 +8,7 @@ package Assignment1;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.RobotSE;
+import becker.robots.Thing;
 import becker.robots.Wall;
 
 /**
@@ -27,12 +28,87 @@ public class A1Q2 {
       RobotSE leeno = new RobotSE(kitchener, 1, 2, Direction.SOUTH);
 
 // create a wall
-        new Wall (kitchener, 2, 2, Direction.NORTH);
+        new Wall (kitchener, 1, 2, Direction.SOUTH);
         
         //create another wall
         new Wall (kitchener, 1, 2, Direction.EAST);
         
         new Wall (kitchener, 1, 1, Direction.NORTH);
+        
+        new Wall (kitchener, 1, 2, Direction.NORTH);
+        
+        new Wall (kitchener, 2, 1, Direction.WEST);
+        
+        new Wall (kitchener, 2, 1, Direction.SOUTH);
+        
+        new Wall (kitchener, 1, 1, Direction.WEST);
+        
+        //create a thing
+        new Thing(kitchener, 2, 2);
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction 
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //pick up thing
+        leeno.pickThing();
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(2);
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces
+        leeno.move(1);
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        
+        
+        //
     }
     
 }
