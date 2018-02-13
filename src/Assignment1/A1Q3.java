@@ -21,14 +21,11 @@ public class A1Q3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //create a city for the robot
+        // create a city for the robot
         City kitchener = new City();
-
+        
         //create a robot
-      RobotSE leeno = new RobotSE (kitchener, 1, 2, Direction.SOUTH);
-      
-        //create a wall
-        new Wall (kitchener, 3, 2, Direction.WEST);
+        RobotSE leeno = new RobotSE(kitchener, 3, 0, Direction.EAST);
         
     
     }
