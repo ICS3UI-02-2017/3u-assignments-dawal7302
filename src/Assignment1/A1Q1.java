@@ -26,6 +26,48 @@ public class A1Q1 {
         RobotSE leeno = new RobotSE(kitchener, 0, 2, Direction.WEST);
         
         //Create a wall
-        new Wall (kitchener, 2, 3, Direction.NORTH);
+        new Wall (kitchener, 1, 2, Direction.NORTH);
+        
+        new Wall (kitchener, 1, 1, Direction.NORTH);
+        
+        new Wall (kitchener, 1, 2, Direction.EAST);
+        
+        new Wall (kitchener, 2, 2, Direction.EAST);
+        
+        new Wall (kitchener, 2, 1, Direction.SOUTH);
+        
+        new Wall (kitchener, 2, 2, Direction.SOUTH);
+        
+        new Wall (kitchener, 1, 1, Direction.WEST);
+        
+        new Wall (kitchener, 2, 1, Direction.WEST);
+        
+        //move the robot n number of spaces
+        leeno.move(2);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //move the robot down n muber of spaces
+        leeno.move(3);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //move the robot right number of spaces
+        leeno.move(3);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //move the robot up number of spaces
+        leeno.move(3);
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //move the robot left n number of spaces
+        leeno.move(1);
+        
     }
 }
