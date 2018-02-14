@@ -106,7 +106,8 @@ public class A1Q2 {
         //robot change direction
         leeno.turnRight();
         
-        
+        //create a thing 
+        new Thing(kitchener, 2, 2);
         
         //
     }
