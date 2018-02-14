@@ -5,10 +5,10 @@
  */
 package Assignment1;
 
-import apple.laf.JRSUIConstants;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.RobotSE;
+import becker.robots.Thing;
 import becker.robots.Wall;
 
 /**
@@ -27,7 +27,26 @@ public class A1Q3 {
         //create a robot
         RobotSE leeno = new RobotSE(kitchener, 3, 0, Direction.EAST);
         
-    
+        //create a thing
+        new Thing(kitchener, 3, 1);
+        
+        //create walls
+        new Wall(kitchener, 3, 2, Direction.WEST);
+        new Wall(kitchener, 3, 2, Direction.NORTH);
+        new Wall(kitchener, 2, 3, Direction.WEST);
+        new Wall(kitchener, 1, 3, Direction.WEST);
+        new Wall (kitchener, 1, 3, Direction.NORTH);
+        new Wall(kitchener, 1, 3, Direction.EAST);
+        new Wall(kitchener, 2, 4, Direction.NORTH);
+        new Wall(kitchener,2, 4, Direction.EAST);
+        new Wall(kitchener, 3, 4, Direction.EAST);
+        
+        //have the robot move and pick thing up
+        leeno.move();
+        leeno.pickThing();
+        
+        //robot change direction
+        leeno.turnLeft();
     }
     
 }
