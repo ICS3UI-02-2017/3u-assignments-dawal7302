@@ -47,6 +47,38 @@ public class A1Q3 {
         
         //robot change direction
         leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move();
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces
+        leeno.move();
+        
+        //robot change direction
+        leeno.turnLeft();
+        
+        //robot move n number of spaces
+        leeno.move(2);
+        
+        //robot change direction
+        leeno.turnRight();
+        
+        //robot move n number of spaces and drop thing
+        leeno.move();
+        leeno.putThing();
+        leeno.move();
+        
+        //robot change direction and move n number of spaces
+        leeno.turnRight();
+        leeno.move();
+        leeno.turnLeft();
+        leeno.move();
+        leeno.turnRight();
+        leeno.move(2);
+        leeno.turnLeft();
     }
     
 }
