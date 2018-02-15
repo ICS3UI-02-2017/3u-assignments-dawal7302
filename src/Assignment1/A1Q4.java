@@ -32,6 +32,18 @@ public class A1Q4 {
         new Wall(kitchener, 1, 1, Direction.WEST);
         new Wall(kitchener, 1, 1, Direction.SOUTH);
         
+        //have leeno move n number of spaces and change direction
+        leeno.move(2);
+        leeno.turnLeft();
+        leeno.move(1);
+        
+        //have karel change direction and move n number of spaces
+        karel.turnLeft();
+        karel.move(1);
+        karel.turnRight();
+        karel.move(2);
+        karel.turnRight();
+        karel.move(1);
     }
     
 }
