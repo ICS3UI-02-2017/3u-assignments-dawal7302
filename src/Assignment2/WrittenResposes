@@ -1,0 +1,13 @@
+Written Responses
+    1a. True
+    1b. True
+    1c. False
+    1d. False
+    1e. False
+    1f. True
+    1g. True
+
+2. These two statements do behave in the same way because in statement 1, it is telling the robot to turn right if
+   it can pick the thing up, that means the opposite response is to turn left if it can't pick the thing up. In 
+   statement 2, it is saying that if the robot can't pick the thing up, it should turn left. Therefore, when the 
+   does these two tasks, they end up in the same situation.
