@@ -40,23 +40,22 @@ public class Assignement2ProgramQuestions {
         new Thing(kitchener, 1, 11);
             
             //if the front is clear move
-            while(leeno.getAvenue() ==12) {
+            while(leeno.getAvenue() !=12) {
                 leeno.move();
                 
                 //is there something to pick up 
-                if(leeno.canPickThing()) {
-                    leeno.pickThing();
-                    //count 7 things in backpack
-            if(leeno.countThingsInBackpack() ==7) {
-               
-            } leeno.move();
+              
+                    if (leeno.countThingsInBackpack() <=6) {
+                        leeno.pickAllThings();
+                    }
+                    
                 }
                 }
             
                
         } 
      
-        }
+        
             
            
         
