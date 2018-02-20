@@ -48,8 +48,8 @@ public class Assignement2ProgramQuestions {
                     leeno.pickThing();
                     //count 7 things in backpack
             if(leeno.countThingsInBackpack() ==7) {
-                leeno.move(6);
-            }
+               
+            } leeno.move();
                 }
                 }
             
