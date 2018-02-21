@@ -82,7 +82,19 @@ public class Assignment2Question2 {
             leeno.turnLeft();          
         }
         if(leeno.frontIsClear()) {
-            leeno.move(2);
+            leeno.move(2);        
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
         }
     }
     
