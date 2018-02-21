@@ -15,7 +15,7 @@ import becker.robots.Thing;
  *
  * @author leendawamneh
  */
-public class Assignement2ProgramQuestions {
+public class Assignement2Question1 {
 
     /**
      * @param args the command line arguments
