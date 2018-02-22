@@ -102,7 +102,13 @@ public class Assignment2Question4 {
             leeno.move();
             leeno.turnRight();
             leeno.move(2);
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move();
+            leeno.turnLeft();
         }
+        
     }
     
 }
