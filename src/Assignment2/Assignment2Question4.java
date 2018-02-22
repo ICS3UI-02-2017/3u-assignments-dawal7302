@@ -53,6 +53,56 @@ public class Assignment2Question4 {
         new Wall(kitchener, 1, 1, Direction.NORTH);
         new Wall(kitchener, 1, 1, Direction.SOUTH);
         
+        //see if front is clear and move
+        if(leeno.frontIsClear()) {
+            leeno.move();
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move(2);
+            leeno.turnRight();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+        }
+        if(!leeno.frontIsClear()) {
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnRight();
+            leeno.move(2);
+        }
     }
     
 }
