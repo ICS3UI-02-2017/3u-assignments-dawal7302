@@ -53,7 +53,8 @@ public class Assignment2Question4 {
         new Wall(kitchener, 1, 1, Direction.NORTH);
         new Wall(kitchener, 1, 1, Direction.SOUTH);
         
-        //see if front is clear and move
+        //see if front is clear and move to guard the castle
+       while(leeno.countThingsInBackpack() ==0) {
         if(leeno.frontIsClear()) {
             leeno.move();
             leeno.turnLeft();
@@ -67,7 +68,7 @@ public class Assignment2Question4 {
         }
         if(!leeno.frontIsClear()) {
             leeno.turnLeft();
-            leeno.move();
+            leeno.move(); 
         }
         if(!leeno.frontIsClear()) {
             leeno.turnLeft();
@@ -111,4 +112,4 @@ public class Assignment2Question4 {
         
     }
     
-}
+} }
