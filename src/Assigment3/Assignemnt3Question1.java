@@ -46,7 +46,20 @@ public class Assignemnt3Question1 {
             leeno.turnLeft();
             leeno.move(3);
             leeno.turnLeft();
-            leeno.move();           
+            leeno.move(3);  
+            leeno.turnLeft();
+            leeno.move(3);
+            leeno.turnLeft();
+            leeno.move();
+            leeno.move(2);
+            leeno.turnLeft();
+            leeno.move(3);
+            leeno.turnLeft();
+            leeno.move(3);  
+            leeno.turnLeft();
+            leeno.move(3);
+            leeno.turnLeft();
+            leeno.move();
         }
        
         }
