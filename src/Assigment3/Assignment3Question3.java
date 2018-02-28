@@ -43,6 +43,41 @@ public class Assignment3Question3 {
             leeno.move();
             leeno.putThing();
             leeno.turnRight();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.turnLeft();
+            leeno.move();
+            leeno.putThing();
+            leeno.turnLeft();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.turnRight();
+            leeno.move();
+            leeno.putThing();
+            leeno.turnRight();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.move();
+            leeno.putThing();
+            leeno.turnLeft();
+            leeno.move();
+            leeno.turnLeft();
         }
         
     }
