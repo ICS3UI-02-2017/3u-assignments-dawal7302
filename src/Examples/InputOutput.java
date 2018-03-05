@@ -66,7 +66,7 @@ public class InputOutput {
         while(age < 0) {
             System.out.println("Try again...");
             birthYear = input.nextInt();
-                    ag
+                    
         }
         //tell the user
         System.out.println("You are " + age + " years old!");
