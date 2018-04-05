@@ -49,7 +49,7 @@ public class A5Q1 {
             System.out.println(translatedWordO);
             
             //replace first u to ubu
-        }else if (firstWord.contains("u")) {
+        } else if (firstWord.contains("u")) {
             String translatedWordU = firstWord.replaceFirst("u", "ubu");
             System.out.println(translatedWordU);  
             
