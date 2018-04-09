@@ -25,8 +25,17 @@ public class A6Q2 {
         int numberOfPeople = input.nextInt();
         System.out.println("What are their heights?");
         int heights = input.nextInt();
-        int totalHeights = numberOfPeople;
-        System.out.println("The avaerage height is " + totalHeights/numberOfPeople + "%");
+        int heightOne = input.nextInt();
+        int heightTwo = input.nextInt();
+        int heightThree = input.nextInt();
+        int heightFour = input.nextInt();
+        int heightFive = input.nextInt();
+        int totalHeights = heightOne + heightTwo + heightThree + heightFour + heightFive;
+        int averageHeights = totalHeights/5;
+        System.out.println("The average height is " + averageHeights);
+        
+        
+        
         
         
         
