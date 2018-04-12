@@ -5,7 +5,9 @@
  */
 package Assignment6;
 
+import static java.util.Collections.swap;
 import java.util.Scanner;
+import static sun.security.krb5.internal.KDCOptions.with;
 
 /**
  *
@@ -22,20 +24,33 @@ public class A6Q4 {
         
         //ask user to enter 10 marks
         System.out.println("Please enter 10 marks");
-        int markOne = input.nextInt();
-        int markTwo = input.nextInt();
-        int markThree = input.nextInt();
-        int markFour = input.nextInt();
-        int markFive = input.nextInt();
-        int markSix = input.nextInt();
-        int markSeven = input.nextInt();
-        int markEight = input.nextInt();
-        int markNine = input.nextInt();
-        int markTen = input.nextInt();
+        int [] marks = new int[10];
+        marks[0] = input.nextInt();
+        marks [1] = input.nextInt();
+        marks [2] = input.nextInt();
+        marks [3] = input.nextInt();
+        marks [4] = input.nextInt();
+        marks [5] = input.nextInt();
+        marks [6] = input.nextInt();
+        marks [7] = input.nextInt();
+        marks [8] = input.nextInt();
+        marks [9] = input.nextInt();
+        
+        for(int x = 0; x <= 8; x++){
+            for (int y = x + 1; y < marks.length; y++) {
+                while (marks[x] > marks[y]); {
+                System.out.println(marks[x] + marks [y]);
+                
+                
+                    
+                }
+                
+                
+            }
+        }
         
   
-        int highest = Integer.MIN_VALUE;
-        int lowest = Integer.MAX_VALUE;
+        
         
     }
     
