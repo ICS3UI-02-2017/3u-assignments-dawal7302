@@ -38,7 +38,7 @@ public class A6Q4 {
         
         for(int x = 0; x <= 8; x++){
             for (int y = x + 1; y < marks.length; y++) {
-                while (marks[x] > marks[y]); {
+                if (marks[x] > marks[y]); {
                 System.out.println(marks[x] + marks [y]);
                 
                 
