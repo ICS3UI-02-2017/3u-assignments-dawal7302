@@ -20,11 +20,16 @@ public class A6Q5 {
         // create a scanner to store information
         Scanner input = new Scanner(System.in);
         
-        //ask user to enter marks
+        //ask user how many marks there are and to enter them
+        System.out.println("How many marks are there?");
+        int numberOfMarks = input.nextInt();
         System.out.println("Please enter the marks");
+        int [] marks = new int [numberOfMarks];
         int allMarks = input.nextInt();
-        int [] marks = new int [allMarks];
-                
+                int markMedianOne = input.nextInt();
+                int markMedianTwo = input.nextInt();               
+                int averageMedian = markMedianOne + markMedianTwo /2;
+                System.out.println("The median of the marks is" + " " + averageMedian);
     }
     
 }
