@@ -29,6 +29,7 @@ public class A6Q6 {
         int highestMark = input.nextInt();
         int averageMark = input.nextInt();
         
+        
     }
     
 }
