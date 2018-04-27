@@ -5,6 +5,8 @@
  */
 package Assignment7;
 
+import java.util.Scanner;
+
 /**
  *
  * @author leendawamneh
@@ -12,10 +14,25 @@ package Assignment7;
 public class A7Q2 {
 
     public static double examGrade(double a, double b, double c, double d, double f) {
-        if(100 >= double a >= 80) {
-        System.out.println("Your grade is an A");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter exam grade");
+        int examGrades = input.nextInt();
+        if(80 <= examGrades && examGrades <= 100) {
+            System.out.println("Your grade is an A");
     }
-        
+        if(70 <= examGrades && examGrades <= 79) {
+            System.out.println("Your grade is a B");
+        }
+        if(60 <= examGrades && examGrades <= 69) {
+            System.out.println("Your grade is a C");
+        }
+        if(50 <= examGrades && examGrades <=59) {
+            System.out.println("Your grade is a D");
+        }
+        if(examGrades < 50) {
+            System.out.println("Your grade is an F");
+        }
+        return examGrades;
     }
     /**
      * @param args the command line arguments
