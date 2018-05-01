@@ -18,7 +18,7 @@ public class A7Q3 {
         int remainder = input.nextInt();
         if (numberFactored % remainder == 0) {
             int factors = numberFactored % remainder;
-            for(int numberFactored % remainder == 0) {
+            System.out.println("The factors of " + numberFactored + "are " + factors);
         }
         
     } 
@@ -29,6 +29,6 @@ public class A7Q3 {
      */
     public static void main(String[] args) {
     
-    }
     
+}
 }
