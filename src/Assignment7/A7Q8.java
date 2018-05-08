@@ -5,24 +5,11 @@
  */
 package Assignment7;
 
-import java.util.Scanner;
-
 /**
  *
  * @author leendawamneh
  */
-public class A7Q6 {
-    public static int lastDigit(int a) {
-    Scanner input = new Scanner (System.in);
-        System.out.println("Enter a number");
-        int number = input.nextInt();
-        int lastDigit = (int)(Math.abs(a) % 10);
-        return a;
-        
-        
-     
-
-    }
+public class A7Q8 {
 
     /**
      * @param args the command line arguments
