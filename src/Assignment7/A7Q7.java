@@ -18,15 +18,17 @@ public class A7Q7 {
         int number = input.nextInt();
         while (a > 9) {
         a /= 10;
-        return a;
         
+        
+    }
+        return a;
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
     }
     
 }
