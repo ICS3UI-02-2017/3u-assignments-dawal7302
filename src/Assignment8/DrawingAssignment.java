@@ -38,9 +38,9 @@ public class DrawingAssignment extends JComponent implements ActionListener {
     Timer gameTimer;
 
     // YOUR GAME VARIABLES WOULD GO HERE
-    Color purple = new Color(207, 191, 255);
-    Color peach = new Color(255, 224, 201);
-    
+    Color lightGreen = new Color(187, 249, 188);
+    Color greenshade = new Color(147, 242, 149);
+    Color darkergreen = new Color(66, 132, 68);
 
 
     // GAME VARIABLES END HERE    
@@ -85,22 +85,56 @@ public class DrawingAssignment extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
-        g.setColor(purple);
+        g.setColor(lightGreen);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         
-        //make a face
-        g.setColor(peach);
-        g.fillOval(100, 75, 400, 500);
         
         //make eyes
         g.setColor(Color.BLACK);
-        g.fillOval(200, 180, 50, 80);
-        g.fillOval(350, 180, 50, 80);
+        g.drawOval(150, 85, 80, 80);
+        g.drawOval(300, 85, 80, 80);
+        g.setColor(Color.GREEN);
+        g.fillOval(150, 85, 80, 80);
+        g.fillOval(300, 85, 80, 80);
+        g.setColor(Color.WHITE);
+        g.fillOval(160, 95, 60, 60);
+        g.fillOval(310, 95, 60, 60);
+        g.setColor(Color.BLACK);
+        g.fillOval(170, 90, 50, 50);
+        g.fillOval(320, 90, 50, 50);
         
+        //make body of frog
+        g.setColor(Color.BLACK);
+        g.drawOval(160, 300, 220, 220);
+        g.setColor(Color.GREEN);
+        g.fillOval(160, 300, 220, 220);
+        g.setColor(Color.BLACK);
+        g.drawOval(195, 340, 150, 150);
+        g.setColor(greenshade);
+        g.fillOval(195, 340, 150, 150);
         
+        //make a face
+        g.setColor(Color.BLACK);
+        g.drawOval(120, 150, 300, 200);
+        g.setColor(Color.GREEN);
+        g.fillOval(120, 150, 300, 200);
         
-		
-		
+        //make legs for frog
+        g.setColor(Color.BLACK);
+        g.drawOval(30, 490, 250, 80);
+        g.drawOval(280, 490, 250, 80);
+        g.setColor(Color.GREEN);
+        g.fillOval(30, 490, 250, 80);
+        g.fillOval(280, 490, 250, 80);
+        
+        //make a nose for frog
+        g.setColor(Color.BLACK);
+        g.drawOval(240, 220, 20, 30);
+        g.drawOval(280, 220, 20, 30);
+        g.setColor(darkergreen);
+        g.fillOval(240, 220, 20, 30);
+        g.fillOval(280, 220, 20, 30);
+      
         // GAME DRAWING ENDS HERE
     }
 
