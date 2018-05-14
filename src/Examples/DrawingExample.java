@@ -39,8 +39,19 @@ public class DrawingExample extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     Color purple = new Color(199, 173, 255);
+    int pacmanX = 100;
+    int pacmanY = 400;
+    //mouth variables
+    int pacmanAngle = 45;
+    int pacmanRotate = 270;
+    boolean pacmanClosing = true;
     
-
+    int mouseX = 0;
+    int mouseY = 0;
+    
+    //game controls
+    boolean moveUp = false;
+    boolean moveDown = false;
 
     // GAME VARIABLES END HERE    
 
@@ -108,14 +119,14 @@ public class DrawingExample extends JComponent implements ActionListener {
         g.fillRoundRect(300, 75, 150, 50, 10, 20);
         
         //draw a polygon
-        int[] triangleX = {500,600,450};
-        int[] triangleY = {400,500,500};
+        int[] triangleX = {mouseX,600,450};
+        int[] triangleY = {mouseY,500,500};
         //(array of x point, array of y points)
         g.fillPolygon(triangleX, triangleY, 3);
         
         g.setColor(Color.YELLOW);
         //(x,y,width,heigh,startAngle,amountToRotate)
-        g.fillArc(100, 400, 100, 100, 45, 270);
+        g.fillArc(pacmanX, pacmanY, 100, 100, pacmanAngle, pacmanRotate);
         
         g.setColor(Color.black);
         //(x,y,x,y)
@@ -134,7 +145,38 @@ public class DrawingExample extends JComponent implements ActionListener {
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
+        //move pacman across the screen
+        pacmanX = pacmanX +3;
         
+        //when pacman leaves the screen
+        if(pacmanX > WIDTH){
+            pacmanX = -100;
+        }
+        
+        
+        
+        //pacman mouth direction
+        if(pacmanAngle <= 0){
+            pacmanClosing = false;
+        }
+        if(pacmanAngle >= 45) {
+            pacmanClosing = true;
+        }
+        if(pacmanClosing){
+            pacmanAngle = pacmanAngle -1;
+        pacmanRotate = pacmanRotate +2;
+        }else{
+            pacmanAngle = pacmanAngle +1;
+        pacmanRotate = pacmanRotate -2;
+        }
+        
+        //move the player
+        if(moveUp) {
+            pacmanY = pacmanY -3;
+            
+        }else if (moveDown) {
+            pacmanY = pacmanY +3;
+        }
     }
 
     // Used to implement any of the Mouse Actions
@@ -143,13 +185,18 @@ public class DrawingExample extends JComponent implements ActionListener {
         // if a mouse button has been pressed down
         @Override
         public void mousePressed(MouseEvent e) {
-
+            //left click
+            if(e.getButton() == MouseEvent.BUTTON1){
+                System.out.println("button");
+            }
         }
 
         // if a mouse button has been released
         @Override
         public void mouseReleased(MouseEvent e) {
-
+            //set the mouse coordinates
+            mouseX = e.getX();
+            mouseY = e.getY();
         }
 
         // if the scroll wheel has been moved
@@ -161,7 +208,9 @@ public class DrawingExample extends JComponent implements ActionListener {
         // if the mouse has moved positions
         @Override
         public void mouseMoved(MouseEvent e) {
-
+            //set the mouse coordinates
+            mouseX = e.getX();
+            mouseY = e.getY();
         }
     }
 
@@ -171,13 +220,27 @@ public class DrawingExample extends JComponent implements ActionListener {
         // if a key has been pressed down
         @Override
         public void keyPressed(KeyEvent e) {
-
+            //get the key code
+            int keyCode = e.getKeyCode();
+            //which key is being pressed
+            if(keyCode == KeyEvent.VK_UP){
+                moveUp = true;
+            }else if (keyCode == KeyEvent.VK_DOWN){
+                moveDown = true;
+            }
         }
 
         // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-
+             //get the key code
+            int keyCode = e.getKeyCode();
+            //which key is being pressed
+            if(keyCode == KeyEvent.VK_UP){
+                moveUp = false;
+            }else if (keyCode == KeyEvent.VK_DOWN){
+                moveDown = false;
+            }
         }
     }
 

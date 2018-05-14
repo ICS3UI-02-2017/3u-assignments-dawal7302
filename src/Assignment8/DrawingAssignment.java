@@ -41,7 +41,13 @@ public class DrawingAssignment extends JComponent implements ActionListener {
     Color lightGreen = new Color(187, 249, 188);
     Color greenshade = new Color(147, 242, 149);
     Color darkergreen = new Color(66, 132, 68);
-
+    
+    int blackEyeOneX = 170;
+    int blackEyeOneY = 90;
+    int blackEyeTwoX = 320;
+    int blackEyeTwoY = 90;
+    
+    
 
     // GAME VARIABLES END HERE    
 
@@ -99,9 +105,12 @@ public class DrawingAssignment extends JComponent implements ActionListener {
         g.setColor(Color.WHITE);
         g.fillOval(160, 95, 60, 60);
         g.fillOval(310, 95, 60, 60);
+        
+        
         g.setColor(Color.BLACK);
-        g.fillOval(170, 90, 50, 50);
-        g.fillOval(320, 90, 50, 50);
+        g.fillOval(blackEyeOneX, blackEyeOneY, 50, 50);
+        g.fillOval(blackEyeTwoX, blackEyeTwoY, 50, 50);
+        
         
         //make body of frog
         g.setColor(Color.BLACK);
