@@ -44,6 +44,10 @@ public class DrawingAssignment extends JComponent implements ActionListener {
     
     int blackEyeOneHeight = 50;
     int blackEyeTwoHeight = 50;
+    
+    boolean eyeClosingOne = true;
+    boolean eyeClosingTwo = false;
+    
     // GAME VARIABLES END HERE    
 
     
@@ -106,14 +110,35 @@ public class DrawingAssignment extends JComponent implements ActionListener {
         g.fillOval(170, 90, 50, blackEyeOneHeight);
         g.fillOval(320, 90, 50, blackEyeTwoHeight);
         
-        if(blackEyeOneHeight <=50) {
+        if(blackEyeOneHeight <=0) {
+            eyeClosingOne = false;
+        }
+        {
+            if(blackEyeOneHeight >50){
+                eyeClosingOne = true;               
+            }
+        if (eyeClosingOne) {
             blackEyeOneHeight = blackEyeOneHeight -2;
             blackEyeOneHeight = blackEyeOneHeight +1;
-            
+        }else{
+            blackEyeOneHeight = blackEyeOneHeight +2;
+            blackEyeOneHeight = blackEyeOneHeight -1;
         }
-        if (blackEyeTwoHeight <=50) {
+        
+        }
+        if(blackEyeTwoHeight <=0) {
+            eyeClosingTwo = false;
+        }
+        {
+            if(blackEyeTwoHeight >50){
+                eyeClosingTwo = true;               
+            }
+        if (eyeClosingTwo) {
             blackEyeTwoHeight = blackEyeTwoHeight -2;
-            blackEyeTwoHeight = blackEyeTwoHeight +1;
+            blackEyeOneHeight = blackEyeOneHeight +1;
+        }else{
+            blackEyeTwoHeight = blackEyeTwoHeight +2;
+            blackEyeTwoHeight = blackEyeTwoHeight -1;
             
         }
         
@@ -138,6 +163,7 @@ public class DrawingAssignment extends JComponent implements ActionListener {
         g.setColor(Color.BLACK);
         g.drawOval(30, 490, 250, 80);
         g.drawOval(280, 490, 250, 80);
+        
         g.setColor(Color.GREEN);
         g.fillOval(30, 490, 250, 80);
         g.fillOval(280, 490, 250, 80);
@@ -152,7 +178,7 @@ public class DrawingAssignment extends JComponent implements ActionListener {
       
         // GAME DRAWING ENDS HERE
     }
-
+    }
     // This method is used to do any pre-setup you might need to do
     // This is run before the game loop begins!
     public void preSetup() {
