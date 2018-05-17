@@ -48,6 +48,7 @@ public class DrawingAssignment extends JComponent implements ActionListener {
     boolean eyeClosingOne = true;
     boolean eyeClosingTwo = false;
     
+    
     // GAME VARIABLES END HERE    
 
     
@@ -135,7 +136,7 @@ public class DrawingAssignment extends JComponent implements ActionListener {
             }
         if (eyeClosingTwo) {
             blackEyeTwoHeight = blackEyeTwoHeight -2;
-            blackEyeOneHeight = blackEyeOneHeight +1;
+            blackEyeTwoHeight = blackEyeOneHeight +1;
         }else{
             blackEyeTwoHeight = blackEyeTwoHeight +2;
             blackEyeTwoHeight = blackEyeTwoHeight -1;
