@@ -2,6 +2,7 @@ package Examples;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -54,6 +55,15 @@ public class PongGameExample extends JComponent implements ActionListener {
     boolean paddle2Up = false;
     boolean paddle2Down = false;
     int paddleSpeed = 4;
+    
+    //player scores
+    int score1 = 0;
+    int score2 = 0;
+    
+    //create a custom font
+    Font biggerFont = new Font("arial", Font.BOLD, 36);
+    
+    
     // GAME VARIABLES END HERE    
 
     
@@ -105,7 +115,15 @@ public class PongGameExample extends JComponent implements ActionListener {
         g.fillRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height);
         g.fillRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
         
+        //draw the scores
+        g.drawString(" " + score1, WIDTH/2 - 50, 50);
+        g.drawString(" " + score2, WIDTH/2 + 150, 50);
+        
+        
         g.fillRect(ball.x, ball.y, ball.width, ball.height);
+        
+        
+        
         // GAME DRAWING ENDS HERE
     }
 
@@ -151,9 +169,40 @@ public class PongGameExample extends JComponent implements ActionListener {
     }
     }
     private void checkForCollion() {
+        // collision with bottom and top
+        if(ball.y < 0) {
+            ballAngle = ballAngle * -1;
+        }
+        if(ball.y + ball.height > HEIGHT) {
+            ballAngle = ballAngle * -1;
+        }
+        //does the ball hit paddle 1 
+        if (ball.intersects(paddle1)){
+           
+            ballAngle = 180 + ballAngle * -1;
+        }
+        //does the bal hit paddle 2
+        if (ball.intersects(paddle2)){
+            ballAngle = 180 + ballAngle * -1;
+        }
+        
     }
 
     private void checkForGoal() {
+        //ball off left hand side
+        if(ball.x < 0){
+            //add to player 2 score
+            score2++;
+            ball.x = WIDTH/2 - ball.height/2;
+            ball.y = HEIGHT/2 - ball.height/2;
+        }
+        //ball hits right hand side of the screen
+        if(ball.x +ball.width > WIDTH) {
+            score1++;
+            //add to player 1 score
+            
+        }
+        
     }
 
     // Used to implement any of the Mouse Actions
@@ -191,20 +240,42 @@ public class PongGameExample extends JComponent implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
             int keyCode = e.getKeyCode();
+            //paddle 1 controls
             if(keyCode == KeyEvent.VK_W){
                 paddle1Up = true;                
             }else if(keyCode == KeyEvent.VK_S){
                 paddle1Down = true;
             }
-            //paddle
+            // paddle 2 controls
+            if(keyCode == KeyEvent.VK_UP){
+                paddle2Up = true;
+           }else if(keyCode == KeyEvent.VK_DOWN){
+                paddle2Down = true;
         }
+        }
+    
 
         // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-
+        int keyCode = e.getKeyCode();
+            // paddle 1 controls
+            if(keyCode == KeyEvent.VK_W){
+                paddle1Up = false;
+            }else if(keyCode == KeyEvent.VK_S){
+                paddle1Down = false;
+            }
+            // paddle 2 controls
+            if(keyCode == KeyEvent.VK_UP){
+                paddle2Up = false;
+            }else if(keyCode == KeyEvent.VK_DOWN){
+                paddle2Down = false;
+            }
         }
     }
+        
+
+    
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -220,5 +291,6 @@ public class PongGameExample extends JComponent implements ActionListener {
         // creates an instance of my game
         PongGameExample game = new PongGameExample();
     }
+
 }
 
