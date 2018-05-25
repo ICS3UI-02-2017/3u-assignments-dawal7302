@@ -19,7 +19,7 @@ import javax.swing.Timer;
  *
  * @author leendawamneh
  */
-public class StackJumpGameSummative extends JComponent implements ActionListener {
+public class JumpOverBlockGameSummative extends JComponent implements ActionListener {
 
     // Height and Width of our game
     static final int WIDTH = 800;
@@ -48,12 +48,14 @@ public class StackJumpGameSummative extends JComponent implements ActionListener
 
     int blockMove = 30;
     boolean movingBlock = true;
+    
+    
     // GAME VARIABLES END HERE    
 
     
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public StackJumpGameSummative(){
+    public JumpOverBlockGameSummative(){
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
 
@@ -109,6 +111,12 @@ public class StackJumpGameSummative extends JComponent implements ActionListener
         g.fillOval(630, 90, 40, 40);
         g.fillOval(660, 90, 40, 40);
         
+        //add spikes/triangles 
+        int [] trianglePoint1 = {20, 170, 100};
+        int [] trianglePoint2 = {20, 20, 100};
+        
+        
+        
         //create the ball that will jump
         g.setColor(Color.RED);
         g.fillOval(ball.x, ball.y, ball.width, ball.height);
@@ -138,23 +146,34 @@ public class StackJumpGameSummative extends JComponent implements ActionListener
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
-        
-        //move the block across screen
-        if(movingBlock){
-            blockMove = blockMove +3;
-        //when the block leaves the screen
-        if(block > WIDTH){ 
-            block = -100;  
-        }
-        makeBallJump();
-        moveBlock();
+     {
+    
+     makeBallJump();
+     moveBlock();
+     checkForCollision();
+     addPoints();
     }
     }
     private void makeBallJump() {
-        
+     
     }
 
     private void moveBlock() {
+        //move the block across screen
+        if(movingBlock){
+            blockMove = blockMove +2;
+        //when the block leaves the screen
+        if(blockMove > WIDTH){ 
+            blockMove = -100;  
+        }
+    }
+    }
+
+    private void checkForCollision() {
+        
+    }
+
+    private void addPoints() {
         
     }
 
@@ -214,7 +233,7 @@ public class StackJumpGameSummative extends JComponent implements ActionListener
      */
     public static void main(String[] args) {
         // creates an instance of my game
-        StackJumpGameSummative game = new StackJumpGameSummative();
+        JumpOverBlockGameSummative game = new JumpOverBlockGameSummative();
     }
 }
 
