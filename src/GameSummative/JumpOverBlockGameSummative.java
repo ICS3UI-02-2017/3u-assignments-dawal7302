@@ -26,7 +26,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     static final int HEIGHT = 600;
 
     //Title of the window
-    String title = "Stack Jump";
+    String title = "Jump Over Block";
 
     // sets the framerate and delay for our game
     // this calculates the number of milliseconds per frame
@@ -48,7 +48,11 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
 
     int blockMove = 30;
     boolean movingBlock = true;
-    
+    boolean jumping = false;
+    boolean onGround = true;
+    double gravity = 1;
+    int deltaY = 540;
+    int ySpeed = 100;
     
     // GAME VARIABLES END HERE    
 
@@ -111,12 +115,6 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         g.fillOval(630, 90, 40, 40);
         g.fillOval(660, 90, 40, 40);
         
-        //add spikes/triangles 
-        int [] trianglePoint1 = {20, 170, 100};
-        int [] trianglePoint2 = {20, 20, 100};
-        
-        
-        
         //create the ball that will jump
         g.setColor(Color.RED);
         g.fillOval(ball.x, ball.y, ball.width, ball.height);
@@ -155,8 +153,17 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     }
     }
     private void makeBallJump() {
-     
+      if (jumping){
+          deltaY += ySpeed;
+          ySpeed -= gravity;
+      }else if (onGround){
+          jumping = false;
+      }   
+      
     }
+             
+         
+    
 
     private void moveBlock() {
         //move the block across screen
@@ -211,7 +218,15 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         // if a key has been pressed down
         @Override
         public void keyPressed(KeyEvent e) {
-
+            int keyCode = e.getKeyCode();
+            //make ball jump when space bar is pressed
+            if (keyCode == KeyEvent.VK_SPACE){
+                jumping = true;
+        }else if (keyCode == KeyEvent.VK_SPACE){
+            onGround = false;
+        }
+            
+            
         }
 
         // if a key has been released
