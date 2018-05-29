@@ -50,9 +50,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     boolean movingBlock = true;
     boolean jumping = false;
     boolean onGround = true;
-    double gravity = 1;
-    int deltaY = 540;
-    int ySpeed = 100;
+    int gravity = 1;
+    int deltaY = -20;
+    int ySpeed = 0;
     
     // GAME VARIABLES END HERE    
 
@@ -145,7 +145,6 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     // In here is where all the logic for my game will go
     public void gameLoop() {
      {
-    
      makeBallJump();
      moveBlock();
      checkForCollision();
@@ -153,13 +152,19 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     }
     }
     private void makeBallJump() {
-      if (jumping){
-          deltaY += ySpeed;
-          ySpeed -= gravity;
-      }else if (onGround){
-          jumping = false;
-      }   
-      
+      ySpeed = ySpeed + gravity;
+        
+        if (jumping && onGround){
+          ySpeed = -10;
+          onGround = false;
+      }
+      ball.y = ball.y + ySpeed; 
+        
+      if(ball.y < 540){
+          ball.y = 540 -1;
+          onGround = true;
+          ySpeed = 0;
+      }
     }
              
          
@@ -173,6 +178,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         if(blockMove > WIDTH){ 
             blockMove = -100;  
         }
+        
     }
     }
 
@@ -232,7 +238,12 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-
+            int keyCode = e.getKeyCode();
+        if (keyCode == KeyEvent.VK_SPACE){
+                jumping = false;
+        }else if (keyCode == KeyEvent.VK_SPACE){
+            onGround = true;
+        }
         }
     }
 
