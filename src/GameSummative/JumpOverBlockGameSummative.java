@@ -46,6 +46,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     Rectangle ball = new Rectangle(360, 540, 50, 50);
     int block = 30;
 
+    //control variables
     int blockMove = 30;
     boolean movingBlock = true;
     boolean jumping = false;
@@ -167,9 +168,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
       }
     }
              
-         
     
-
     private void moveBlock() {
         //move the block across screen
         if(movingBlock){
@@ -185,9 +184,10 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
 
     private void checkForCollision() {
         //does the ball hit the block
-        if(ball.intersects(blockOne)){
-            
-            
+        if(jumping && ball.intersects(blockOne)){
+           ball.y = ball.y *2; 
+        }else if (ball.y < 0){
+            ball.y = ball.y -7;
         }
          }
 
