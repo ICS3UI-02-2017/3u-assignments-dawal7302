@@ -54,6 +54,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     int gravity = 1;
     int deltaY = -20;
     int ySpeed = 0;
+    int scoreOne = 0;
     
     // GAME VARIABLES END HERE    
 
@@ -184,7 +185,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
 
     private void checkForCollision() {
         //does the ball hit the block
-        if(blockMove >= 360 && blockMove <= 410){
+        if(blockMove >= 360 && blockMove <= 460){
+            
+            //player, b, player
             ball.y = blockOne.y -ball.height;
         }
                     
@@ -193,7 +196,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
          }
 
     private void addPoints() {
-        
+        if (ball.x > 0){
+            
+        }
     }
 
     // Used to implement any of the Mouse Actions
