@@ -184,11 +184,10 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
 
     private void checkForCollision() {
         //does the ball hit the block
-        if(blockMove == 360){
-            blockOne.intersects(ball);
-            ball.y = ball.y +30;
+        if(blockMove >= 360 && blockMove <= 410){
+            ball.y = blockOne.y -ball.height;
         }
-            
+                    
         
            
          }
