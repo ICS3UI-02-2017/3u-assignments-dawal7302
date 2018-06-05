@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -55,6 +56,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     int deltaY = -20;
     int ySpeed = 0;
     int scoreOne = 0;
+    
+    //create a custom font
+    Font biggerFont = new Font("arial", Font.BOLD, 80);
     
     // GAME VARIABLES END HERE    
 
@@ -162,7 +166,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
       }
       ball.y = ball.y + ySpeed; 
         
-      if(ball.y > 540){
+      if(ball.y >= 540){
           ball.y = 540;
           onGround = true;
           ySpeed = 0;
@@ -185,10 +189,13 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
 
     private void checkForCollision() {
         //does the ball hit the block
-        if(blockMove >= 360 && blockMove <= 460){
+        if(blockMove > 260 && blockMove < 460){
+            jumping = false;
             
-            //player, b, player
-            ball.y = blockOne.y -ball.height;
+            if(ball.y > 340){
+                ball.y = blockOne.y - ball.height;
+                
+            }
         }
                     
         
@@ -196,8 +203,8 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
          }
 
     private void addPoints() {
-        if (ball.x > 0){
-            
+        if (blockMove > 260 && blockMove < 460 && jumping){
+           scoreOne = scoreOne ++;
         }
     }
 
