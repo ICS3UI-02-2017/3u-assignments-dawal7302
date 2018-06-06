@@ -170,6 +170,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
           ball.y = 540;
           onGround = true;
           ySpeed = 0;
+          if(ball.y == 510 && ball.intersects(blockOne)){
+              onGround = true;
+          }
       }
     }
              
@@ -192,9 +195,9 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         if(blockMove > 260 && blockMove < 460){
             jumping = false;
             
+            
             if(ball.y > 340){
                 ball.y = blockOne.y - ball.height;
-                
             }
         }
                     
