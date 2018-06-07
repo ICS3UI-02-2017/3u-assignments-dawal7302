@@ -130,6 +130,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         g.fillRect(blockMove, blockOne.y, blockOne.width, blockOne.height);
         
         
+        
             
         
         
@@ -170,7 +171,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
           ball.y = 540;
           onGround = true;
           ySpeed = 0;
-          if(ball.y == 510 && ball.intersects(blockOne)){
+          if(ball.intersects(blockOne)){
               onGround = true;
           }
       }
@@ -180,7 +181,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     private void moveBlock() {
         //move the block across screen
         if(movingBlock){
-            blockMove = blockMove +4;
+            blockMove = blockMove +10;
         //when the block leaves the screen
         if(blockMove > WIDTH){ 
             blockMove = -100;  
@@ -194,10 +195,14 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         //does the ball hit the block
         if(blockMove > 260 && blockMove < 460){
             jumping = false;
-            
+            if(ball.intersects(blockOne)){
+                onGround = true;
+            }
+              
             
             if(ball.y > 340){
                 ball.y = blockOne.y - ball.height;
+                onGround = true;
             }
         }
                     
