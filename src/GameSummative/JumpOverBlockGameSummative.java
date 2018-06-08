@@ -181,7 +181,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     private void moveBlock() {
         //move the block across screen
         if(movingBlock){
-            blockMove = blockMove +10;
+            blockMove = blockMove +5;
         //when the block leaves the screen
         if(blockMove > WIDTH){ 
             blockMove = -100;  
@@ -203,6 +203,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
             if(ball.y > 340){
                 ball.y = blockOne.y - ball.height;
                 onGround = true;
+                
             }
         }
                     
@@ -211,8 +212,10 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
          }
 
     private void addPoints() {
-        if (blockMove > 260 && blockMove < 460 && jumping){
+        if (ball.y > blockOne.y){
            scoreOne = scoreOne ++;
+        }else if (ball.x -30 <= blockMove){
+            System.out.println("game over");
         }
     }
 
