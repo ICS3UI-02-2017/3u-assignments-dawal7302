@@ -212,8 +212,12 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
          }
 
     private void addPoints() {
-        if (ball.y > blockOne.y){
-           scoreOne = scoreOne ++;
+        //the ball is near the ball
+        if (blockOne.x >= 260 && blockOne.x <= 460){
+            if(ball.y > blockOne.y){
+                scoreOne = scoreOne ++;
+            }
+            //game is over if the ball touches the block
         }else if (ball.x -30 <= blockMove){
             System.out.println("game over");
         }
@@ -269,6 +273,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         @Override
         public void keyReleased(KeyEvent e) {
             int keyCode = e.getKeyCode();
+            //when the space bar is released the ball goes down
         if (keyCode == KeyEvent.VK_SPACE){
                 jumping = false;
         }else if (keyCode == KeyEvent.VK_SPACE){
