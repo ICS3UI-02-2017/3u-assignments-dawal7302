@@ -218,7 +218,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
                 scoreOne = scoreOne ++;
             }
             //game is over if the ball touches the block
-        }else if (ball.x -30 <= blockMove){
+        }else if (ball.y -30 == blockMove){
             System.out.println("game over");
         }
     }
