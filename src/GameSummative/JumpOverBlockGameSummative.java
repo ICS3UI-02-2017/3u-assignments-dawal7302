@@ -184,7 +184,8 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
             blockMove = blockMove +5;
         //when the block leaves the screen
         if(blockMove > WIDTH){ 
-            blockMove = -100;  
+            blockMove = -100; 
+            
         }
         
         
