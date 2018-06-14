@@ -129,6 +129,10 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         g.setColor(Color.BLACK);
         g.fillRect(blockMove, blockOne.y, blockOne.width, blockOne.height);
         
+        //draw the scores
+        g.drawString(" " + scoreOne, 360, 50);
+        
+        
         
         
             
@@ -215,7 +219,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     private void addPoints() {
         //the ball is near the ball
         if (blockOne.x >= 260 && blockOne.x <= 460){
-            if(ball.y > blockOne.y){
+            if(ball.y > blockMove && jumping){
                 scoreOne = scoreOne ++;
             }
             //game is over if the ball touches the block
