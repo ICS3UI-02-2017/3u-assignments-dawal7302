@@ -57,6 +57,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     int ySpeed = 0;
     int scoreOne = 0;
     
+    
     //create a custom font
     Font biggerFont = new Font("arial", Font.BOLD, 80);
     
@@ -130,7 +131,8 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         g.fillRect(blockMove, blockOne.y, blockOne.width, blockOne.height);
         
         //draw the scores
-        g.drawString(" " + scoreOne, 360, 50);
+        g.setFont(biggerFont);
+        g.drawString(" " + scoreOne, 360, 80);
         
         
         
@@ -210,6 +212,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
                 onGround = true;
                 
             }
+            
         }
                     
         
@@ -219,7 +222,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
     private void addPoints() {
         //the ball is near the ball
         if (blockOne.x >= 260 && blockOne.x <= 460){
-            if(ball.y > blockMove && jumping){
+            if(ball.y > blockOne.y && jumping){
                 scoreOne = scoreOne ++;
             }
             //game is over if the ball touches the block
