@@ -133,7 +133,7 @@ public class JumpOverBlockGameSummative extends JComponent implements ActionList
         
         //draw the scores
         g.setFont(biggerFont);
-        g.drawString(" " + scoreOne, 360, 80);
+        g.drawString(" " + scoreOne, WIDTH/2 - 50, 80);
         g.setFont(smallerFont);
         if (ball.y -30 == blockMove){
             g.drawString(" " + gameOver, 310, 160);
